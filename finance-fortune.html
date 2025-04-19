@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance Fortune Teller</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #f0f4f8, #cce0ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInPage 1s ease-in forwards;
+    }
+
+    @keyframes fadeInPage {
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #00416a;
+      margin-bottom: 10px;
+    }
+
+    .fortune-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      min-height: 80px;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .typing {
+      border-right: 2px solid #00416a;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 2s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #00416a;
+      }
+    }
+
+    .glow {
+      animation: glowText 1s ease-in-out;
+    }
+
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 5px #66aaff;
+      }
+      50% {
+        text-shadow: 0 0 15px #66aaff;
+      }
+      100% {
+        text-shadow: 0 0 5px #66aaff;
+      }
+    }
+
+    button {
+      background-color: #00416a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #00416a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Finance Fortune Teller 🔮</h1>
+  <div class="fortune-box" id="fortuneBox">Click the button to reveal your financial future...</div>
+  <button onclick="getFortune()">Tell My Fortune</button>
+
+  <div class="back-link">
+    <a href="scratch.html">← Back to Scratch Page</a>
+  </div>
+
+  <script>
+    const fortunes = [
+      "Your crypto investment will 5x... right after you sell.",
+      "You will find a $20 bill in your laundry.",
+      "A wise man once said: 'Buy low, forget the password.'",
+      "You will impress your boss by casually explaining ETFs.",
+      "Your Venmo balance is about to surprise you—in a bad way.",
+      "A stranger will give you great stock advice. Don’t take it.",
+      "Your side hustle will go viral. Shark Tank awaits.",
+      "You’ll finally understand compound interest... at 2 a.m.",
+      "The next Amazon is coming... you just missed it.",
+      "You will make a budget. It will last exactly 3 days."
+    ];
+
+    function getFortune() {
+      const box = document.getElementById('fortuneBox');
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      const fortune = fortunes[randomIndex];
+
+      // Reset box
+      box.classList.remove('typing', 'glow');
+      box.textContent = '';
+
+      // Simulate typing effect
+      setTimeout(() => {
+        box.classList.add('typing', 'glow');
+        box.textContent = fortune;
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>
+

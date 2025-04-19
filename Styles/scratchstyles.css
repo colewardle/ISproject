@@ -1,0 +1,69 @@
+body.main-bg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1558611848-73f7eb4001ab');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  nav a {
+    color: #ff0000;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  
+  h1, h2 {
+    color: #ff0000;
+  }
+  
+  .section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  ol li {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  ul li {
+    margin-left: 20px;
+    list-style-type: square;
+  }
+  
+  a.back-top, a.anchor-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  /* This centers the YouTube iframe */
+iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  /* This centers the Tableau visualization */
+  .tableauPlaceholder {
+    display: flex;
+    justify-content: center;
+  }
+  
